@@ -3,6 +3,8 @@ public class TestPersona
   public static void main(String[] args)
   {
     Persona usuario = new Persona();
+    CuentaBancaria cuenta1 = new CuentaBancaria();
+    CuentaBancaria cuenta2 = new CuentaBancaria();
     
     String nombre = usuario.getNombre();
     System.out.println("Nombre usuario:"+" "+usuario.getNombre());
@@ -18,5 +20,15 @@ public class TestPersona
     
     int añoNacimiento = usuario.getAñoNacimiento();
     System.out.println("Año de nacimiento del usuario:"+" "+usuario.getAñoNacimiento());
+
+    cuenta1.tarjetaTitular();
+    System.out.println("Este es el titular de la cuenta"+titular);
+    cuenta1.ingresoCuenta();
+     System.out.println("Este es el dinero que desea ingresar:"+ingreso);
+    cuenta1.retiroCuenta();
+     System.out.println("Este es el dinero que desea retirar:"+sacar);
+    cuenta1.getSaldo();
+     System.out.println("Este es el saldo de la cuenta 1:"+getSaldo());
+    
   }
 }

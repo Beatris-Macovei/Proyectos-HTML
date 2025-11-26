@@ -4,7 +4,7 @@ public class Persona
 {
   private String nombre;
   private String apellidos;
-  private String telefono;
+  private int telefono;
   private String dni;
   private String direccion;
   private int fechaNacimiento;
@@ -28,8 +28,8 @@ public class Persona
 	public void setNombre(String nombre)
 	{
 	  Scanner teclado = new Scanner(System.in);
-	  nombre= teclado.next();
 	  System.out.println("Dime tu nombre");
+	  nombre= teclado.next();
 		this.nombre = nombre;
 		
 	}
@@ -41,18 +41,17 @@ public class Persona
 	public void setApellidos(String apellidos)
 	{
 	  Scanner teclado = new Scanner(System.in);
+	  System.out.println("Dime tu apellido");
 	  apellidos= teclado.next();
-	   System.out.println("Dime tu apellido");
 		this.apellidos = apellidos;
 	}
-	public String getTelefono()
+	public int getTelefono()
 	{
 		return telefono;
 	}
 
-	public void setTelefono(String telefono)
-	{
-	  
+	public void setTelefono(int telefono)
+	{	  
 		this.telefono = telefono;
 	}
 	public String getDni()
@@ -73,8 +72,8 @@ public class Persona
 	public void setDireccion(String direccion)
 	{
 	  Scanner teclado = new Scanner(System.in);
+	  System.out.println("Dime tu direccion");
 	  direccion= teclado.next();
-	   System.out.println("Dime tu direccion");
 		this.direccion = direccion;
 	}
 	public int getAñoNacimiento()
@@ -85,8 +84,8 @@ public class Persona
 	public void setAñoNacimiento(int fechaNacimiento)
 	{
 	  Scanner teclado = new Scanner(System.in);
+	  System.out.println("Dime tu año de nacimiento");
 	  fechaNacimiento= teclado.nextInt();
-	   System.out.println("Dime tu año de nacimiento");
 		this.fechaNacimiento = fechaNacimiento;
 	}
 }

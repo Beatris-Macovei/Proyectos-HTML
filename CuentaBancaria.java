@@ -8,6 +8,7 @@ public class CuentaBancaria
   private double ingreso;
   private boolean retiro;
   private double sacar;
+  private Persona[] autorizadas = new Persona[2];
   
   //...resto de atributos
   
@@ -27,11 +28,11 @@ public class CuentaBancaria
   {
     return saldo;
   }
-  public double ingresoCuenta
+  public double ingresoCuenta()
   {
     Scanner teclado = new Scanner(System.in);
-    ingreso = teclado.next();
     System.out.println("¿Cuanto dinero quieres ingresar?");
+    ingreso = teclado.nextDouble();
     this.ingreso=ingreso;
     if(ingreso<0)
     {
@@ -44,11 +45,11 @@ public class CuentaBancaria
   }
   public boolean retiroCuenta(double sacar)
   {
-    b
+    
     Scanner teclado = new Scanner(System.in);    
-    sacar=teclado.next();
     System.out.println("¿Cuanto dinero quiere retirar?");
-    boolean retiro = sacar<=this.saldo
+    sacar=teclado.nextDouble();
+    boolean retiro = sacar<=this.saldo;
     if(retiro)
     {
       saldo=saldo-sacar;
@@ -62,6 +63,21 @@ public class CuentaBancaria
   {
     return saldo;
   }
+  public boolean añadirAutorizado()
+  {
+    boolean hePodido=false;
+    for(int i=0; i<autorizadas.length && hePodido==false; i++)
+    {
+      if(autorizadas[i]==null)
+      {
+        autorizadas[i]=new Persona();
+        hePodido=true;
+      }
+    }
+    return hePodido;
+  }
+    
+}
     
   
   
